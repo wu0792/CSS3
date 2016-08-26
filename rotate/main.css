@@ -1,0 +1,34 @@
+.item{
+    position: absolute;
+}
+
+.avatar{
+    background-image: url('avatar.png');
+    width: 216px;
+    height: 215px;
+    border: solid 2px #000;
+    display: inline-block;
+    z-index: 100;
+    position: absolute;
+}
+
+.effect{
+    background-position: bottom;
+    position: absolute;
+    transform-origin: 80% top;
+}
+
+.effect1{
+    opacity: .6;
+    transform: rotate(-5deg);
+}
+
+.effect2{
+    opacity: .5;
+    transform: rotate(-10deg);
+}
+
+.effect3{
+    opacity: .4;
+    transform: rotate(-15deg);
+}

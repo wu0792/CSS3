@@ -1,0 +1,44 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem;
+  color: black;
+}
+#author {
+  color: gold;
+}
+#author.inner {
+  color: gray;
+}
+#date {
+  color: green!important;
+}
+span {
+  color: red!important;
+}
+.inner {
+  color: brown;
+  text-decoration: underline;
+}
+h3 {
+  font-weight: lighter;
+  color: wheat;
+}
+span {
+  color: blue;
+}
+p {
+  font-size: 1.0rem;
+  line-height: 1.3rem;
+}
+article h3 {
+  font-weight: bolder;
+  color: red;
+}
+article .inner {
+  color: red;
+}
+article p {
+  color: blue;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式说明</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <article>
+        <h3>今天傍晚挂了一阵妖风，很是诡异.</h3>
+        <span class="inner" id="author">作者：子非鱼</span>
+        <span id="date" style="color: red;">日期：2016-8-26 22:34:56</span>
+        <p style="color: green;">今天下班前突然刮起一阵妖风，突然想起嚎叫声音，同事都跑窗户边，风太大想关起窗户，几个同事一起拽着把手都关不上~~~</p>
+        <p>天气预报两小时之内会有强降雨，匆匆完成TeamBuilding就回来了~</p>
+    </article>
+
+    <hr>
+    <p>总结CSS优先级：</p>
+    <ul>
+        <li>如果有!important样式，5级，优先级最高，应用该样式；</li>
+        <li>如果有内联样式，4级，即元素内的style定义，应用该样式；</li>
+        <li>如果有ID样式，3级，应用该样式；</li>
+        <li>如果有伪类样式，2级，应用该样式；</li>
+        <li>如果有类型样式，1级，应用该样式；</li>
+        <li>如果出现组合，上面的各个级别的样式会进行权重叠加，不同浏览器可能不同，可以定位10，<br>
+        即 5级样式数目*(10^5) + 4级样式数目*(10^4) + 3级样式数目*(10^3) + 2级样式数目*(10^2) + 1级样式数目*(10^1) </li>
+    </ul>
+</body>
+</html>
