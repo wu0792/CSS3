@@ -43,7 +43,7 @@ gulp.task('browser-sync', ['watch'], function() {
     // 提供一个回调来捕获所有事件的CSS 
     // files - 然后筛选的'change'和重载所有
     // css文件在页面上
-    browserSync.watch('./*/css/*.css', function(event, file) {
+    browserSync.watch('./*/css/*.css', { ignored: './node_modules/*' }, function(event, file) {
         if (event === "change") {
             browserSync.reload("*.css");
         } else {

@@ -1,0 +1,135 @@
+section {
+  border: solid 1px black;
+  background-color: lightgrey;
+  margin: 10px;
+}
+#normal .demo {
+  background-color: cornflowerblue;
+  margin: 50px;
+  border: solid 1px red;
+  padding: 50px;
+  width: 500px;
+}
+#normal .header {
+  font-size: 16px;
+  font-weight: bold;
+  border: solid 1px navajowhite;
+}
+#normal .container {
+  border: solid 1px blue;
+}
+#normal .content {
+  border: solid 1px rebeccapurple;
+  margin: 5px;
+  padding: 10px;
+  height: 150px;
+}
+#normal .content .title {
+  height: 50px;
+  vertical-align: middle;
+  border: solid 1px red;
+  margin: 5px;
+  padding: 5px;
+}
+#normal .content .author {
+  display: inline-block;
+  height: 50px;
+  border: solid 1px red;
+  margin: 5px;
+  padding: 5px;
+}
+#normal .content .date {
+  display: block;
+  height: 50px;
+  border: solid 1px red;
+  margin: 5px;
+  padding: 5px;
+}
+#normal .summary {
+  display: inline;
+  height: 50px;
+  width: 50px;
+  border: solid 1px red;
+  margin: 5px;
+  padding: 5px;
+}
+#relative .demo {
+  background-color: lightseagreen;
+}
+#relative .demo .relative {
+  width: 200px;
+  height: 200px;
+  background-color: wheat;
+  position: relative;
+  border: solid 1px black;
+  left: 50px;
+  top: 50px;
+  display: inline-block;
+  opacity: .5;
+}
+#relative .demo .normal {
+  width: 200px;
+  height: 200px;
+  background-color: wheat;
+  border: solid 1px black;
+  display: inline-block;
+}
+#absolute {
+  background-color: wheat;
+  position: relative;
+}
+#absolute .normal {
+  height: 50px;
+  background-color: skyblue;
+  border: solid 1px black;
+  margin: 5px;
+}
+#absolute .absolute {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: inline-block;
+  height: 50px;
+  width: 200px;
+  background-color: snow;
+  border: solid 1px red;
+}
+#float .demo {
+  background-color: darkolivegreen;
+  padding: 10px;
+}
+#float .demo .floatleft {
+  float: left;
+  width: 200px;
+  height: 100px;
+  background-color: wheat;
+  border: solid 1px rebeccapurple;
+}
+#float .demo .floatright {
+  float: right;
+  width: 500px;
+  height: 200px;
+  background-color: wheat;
+  border: solid 1px rebeccapurple;
+}
+#float .demo .innerfloatleft {
+  float: left;
+  height: 100px;
+  width: 100px;
+  background-color: aliceblue;
+  border: yellowgreen;
+}
+#float .demo .innerfloatright {
+  float: right;
+  height: 100px;
+  width: 100px;
+  background-color: aliceblue;
+  border: yellowgreen;
+}
+#float .clearfix::after {
+  content: '.';
+  height: 0;
+  visibility: hidden;
+  clear: both;
+  display: block;
+}

@@ -1,0 +1,149 @@
+section{
+    border: solid 1px black;
+    background-color: lightgrey;
+    margin: 10px;
+}
+
+#normal{    
+    .demo{
+        background-color: cornflowerblue;
+        margin: 50px;
+        border: solid 1px red;
+        padding: 50px;
+        width: 500px;
+    }
+    .header{
+        font-size: 16px;
+        font-weight: bold;
+        border: solid 1px navajowhite;
+    }
+    .container{
+        border: solid 1px blue;
+    }
+    .content{
+        border: solid 1px rebeccapurple;
+        margin: 5px;
+        padding: 10px;
+        height: 150px;
+        .title{
+            //可以看出行内元素设置的宽高没有效果，mrgin和padding有效果
+            height: 50px;
+            vertical-align: middle;
+            border: solid 1px red;
+            margin: 5px;
+            padding: 5px;
+        }
+        .author{
+            //可以看出行内块级元素设置的宽高没有效果，mrgin和padding有效果
+            display: inline-block;
+            height: 50px;
+            border: solid 1px red;
+            margin: 5px;
+            padding: 5px;
+        }
+        .date{
+            //即便默认是行内元素，修改成块级元素后，布局就是独占一行
+            display: block;
+            height: 50px;
+            border: solid 1px red;
+            margin: 5px;
+            padding: 5px;
+        }
+    }
+    .summary{
+        //以inline模式显示的块级元素，设置宽高没有任何作用
+        display: inline;
+        height: 50px;
+        width: 50px;
+        border: solid 1px red;
+        margin: 5px;
+        padding: 5px;
+    }
+}
+
+#relative{
+    .demo{
+        background-color: lightseagreen;
+        .relative{
+            width: 200px;
+            height: 200px;
+            background-color: wheat;
+            position: relative;
+            border: solid 1px black;
+            left: 50px;
+            top: 50px;
+            display: inline-block;
+            opacity: .5;
+        }
+        .normal{
+            width: 200px;
+            height: 200px;
+            background-color: wheat;
+            border: solid 1px black;
+            display: inline-block;
+        }
+    }
+}
+
+#absolute{
+    background-color: wheat;
+    position: relative;
+    .normal{
+        height: 50px;
+        background-color: skyblue;
+        border: solid 1px black;
+        margin: 5px;
+    }
+    .absolute{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: inline-block;
+        height: 50px;
+        width: 200px;
+        background-color: snow;
+        border: solid 1px red;
+    }
+}
+
+#float{
+    .demo{
+        background-color: darkolivegreen;
+        padding: 10px;
+        .floatleft{
+            float: left;
+            width: 200px;
+            height: 100px;
+            background-color: wheat;
+            border: solid 1px rebeccapurple;
+        }
+        .floatright{
+            float: right;
+            width: 500px;
+            height: 200px;
+            background-color: wheat;
+            border: solid 1px rebeccapurple;
+        }
+        .innerfloatleft{
+            float: left;
+            height: 100px;
+            width: 100px;
+            background-color: aliceblue;
+            border: yellowgreen;
+        }
+        .innerfloatright{
+            float: right;
+            height: 100px;
+            width: 100px;
+            background-color: aliceblue;
+            border: yellowgreen;
+        }
+    }
+    .clearfix::after{
+        content: '.';
+        height: 0;
+        visibility: hidden;
+        clear: both;
+        display: block;
+    }
+}

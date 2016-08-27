@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <h1>文档定位分为三种方式：普通文档流、绝对定位、浮动。</h1>
+    <section id="normal">
+        <h3>普通文档流</h3>
+        <hr>
+        <p>默认模式下，文档布局采用普通文档流，即块级元素采用盒子模型，每个块级元素占据完整一行，从上到下依次排列。行内元素则在父容器内从左到右排列。需要注意的是，块级元素的宽高默认只是内容区域的宽高，而实际占据的宽高会再加上内边距、边框、外边距，可以通过修改box-sizing属性切换这种宽高计算方式。行内元素的display即inline，宽高根据内容自行调整，显示设置宽高不会影响他的布局。而将其display设置成inline-block后则可以达到行内元素设置宽高的效果。</p>
+        <div>下面是普通文档流的DEMO：</div>
+        <hr>
+        <div class="demo">
+            <div class="header">header信息</div>
+            <div class="container">
+                <div class="nav">导航区域</div>
+                <div class="content">
+                    <span class="title">文章标题</span>
+                    <span class="author">作者</span>
+                    <span class="date">日期</span>
+                </div>
+                <div class="summary">文章概要</div>
+            </div>
+        </div>
+    </section>
+    <section id="relative">
+        <h3>相对定位</h3>
+        <hr>
+        <p>相对定位很好理解，就是普通文档流模式的元素，偏离默认位置进行偏移，但定位的偏移不会影响到后续其他元素的布局，即对于其他元素来说，就当做相对定位的元素并没有进行相应的偏移，正常布局。</p>
+        <div>下面是相对布局的DEMO：</div>
+        <hr>
+        <div class="demo">
+            <span class="normal">默认定位</span>
+            <span class="relative">相对定位</span>
+            <span class="normal">默认定位</span>
+        </div>
+    </section>
+    <section id="absolute">
+        <h3>绝对定位</h3>
+        <hr>
+        <p>绝对定位可以使元素基于相距最近且定位的父容器（记为C）为基准进行定位，绝对定位的元素会脱离普通文档流，游离于正常布局之外，不会对现有的普通文档流产生影响。可以通过top,right,bottom,left相对于C进行定位。</p>
+        <div>下面是相对定位布局的DEMO：</div>
+        <hr>
+        <div class="demo">
+            <div class="normal">正常布局，DIV1</div>
+            <div class="normal">正常布局，DIV2</div>
+            <div class="absolute">绝对定位，DIV3</div>
+            <div class="normal">正常布局，DIV4</div>
+        </div>
+    </section>
+    <section id="float">
+        <h3>浮动定位</h3>
+        <hr>
+        <p>绝对定位的元素也会脱离普通文档流，可以采用向左或向右浮动，使元素一直往左/右移动，直到挨到父容器的边框或其他浮动元素的边框为止。浮动导致的一个常见问题就是高度塌陷，也就是说，如果一个父容器内的元素使用浮动属性，而浮动属性脱离普通文档流，那父容器的高度如果没有指定，那么表现出来就是没有高度。解决办法有几个：</p>
+        <ul>
+            <li>在父容器的结束前，添加一个空元素，如DIV，设置其 clear: both; </li>
+            <li>指定父容器的高度，但浮动元素高度有变动之后不能自适应；</li>
+            <li>采用::after标记，为父容器添加虚拟元素，现代浏览器都认识这个属性，可以自动在父容器的结束前插入一个::after元素，再为其指定属性即可。相当于浏览器帮我们做了方案1的事情。</li>
+        </ul>
+        <div></div>
+        <div class="demo clearfix">
+            <div class="floatleft">FLOAT LEFT</div>
+            <div class="floatleft">FLOAT LEFT</div>
+            <div class="floatright" id="floatright">
+                <span>FLOAT RIGHT #floatright</span>
+                <div class="innerfloatleft">innerr floatleft</div>
+                <div class="innerfloatright">inner floatright</div>
+                <p id="floatremark">这里要注意一下，#floatright自身是浮动，而且并没有在它上面添加clearfix样式，浏览器不会去添加::after元素，但依旧没有出现高度塌陷，这是因为#floatright所处的浮动流也有自身的布局，内部的innerfloatxx都在这个布局上，高度可以自然调整。还有一点很有意思，这个#floatremark的左右流动方式观察一下，它会左右再去填充满没有被innerfloatxx占据的垂直上下空间。</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
