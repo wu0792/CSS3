@@ -5,6 +5,8 @@ var path = require('path');
 var plumber = require('gulp-plumber');
 var babel = require('gulp-babel');
 var rename = require('gulp-rename');
+var LessAutoprefix = require('less-plugin-autoprefix');
+var autoprefix = new LessAutoprefix({ browsers: ['last 20 versions'] });
 
 gulp.task('watch', function() {
     gulp.watch('./*/less/*.less', ['less']);
@@ -15,6 +17,7 @@ gulp.task('less', function() {
     return gulp.src('./*/less/*.less')
         .pipe(plumber())
         .pipe(less())
+        .pipe(less({ plugins: [autoprefix] }))
         .on('error', function(e) {})
         .pipe(rename(function(path){
             path.dirname += '/../css';

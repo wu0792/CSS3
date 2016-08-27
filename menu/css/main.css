@@ -2,6 +2,10 @@ html {
   font-size: 62.5%;
   color: #222;
 }
+::-moz-selection {
+  background-color: #b3d4fc;
+  text-shadow: none;
+}
 ::selection {
   background-color: #b3d4fc;
   text-shadow: none;
@@ -53,7 +57,9 @@ li {
   top: 1.3em;
   left: 0.6em;
   margin-top: -1.3em;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
   width: 0.5em;
 }
 .items ul li:hover {

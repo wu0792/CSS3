@@ -1,0 +1,110 @@
+section {
+  border: solid 1px gray;
+  background-color: #c8c8c8;
+  margin: 10px 0;
+  padding: 5px;
+}
+#repeatX .demo {
+  background: url('../img/gradient.png') repeat-x;
+  background-color: white;
+  height: 200px;
+  border: solid 1px black;
+}
+#tab .demo .nav {
+  margin: 0;
+}
+#tab .demo .nav li {
+  list-style: none;
+  display: inline-block;
+  height: 30px;
+  min-width: 80px;
+  background-color: white;
+  line-height: 35px;
+  padding: 3px 5px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 0 1px;
+  margin-bottom: 0;
+  position: relative;
+  -webkit-border-radius: 15px 15px 0 0;
+          border-radius: 15px 15px 0 0;
+  cursor: pointer;
+}
+#tab .demo .nav li.active {
+  font-weight: bold;
+  z-index: 100;
+  color: brown;
+}
+#tab .demo .nav li::before,
+#tab .demo .nav li::after {
+  content: ' ';
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+}
+#tab .demo .nav li::before {
+  left: -20px;
+}
+#tab .demo .nav li::after {
+  right: -20px;
+}
+#tab .demo .nav li.h5 {
+  background-color: orange;
+}
+#tab .demo .nav li.h5::before {
+  left: -20px;
+  background: -webkit-radial-gradient(0% 0%, circle, transparent 0%, transparent 70%, orange 70%, orange 100%);
+  background: radial-gradient(0% 0%, circle, transparent 0%, transparent 70%, orange 70%, orange 100%);
+}
+#tab .demo .nav li.h5::after {
+  right: -20px;
+  background: -webkit-radial-gradient(100% 0%, circle, transparent 0%, transparent 70%, orange 70%, orange 100%);
+  background: radial-gradient(100% 0%, circle, transparent 0%, transparent 70%, orange 70%, orange 100%);
+}
+#tab .demo .nav li.css3 {
+  background-color: skyblue;
+}
+#tab .demo .nav li.css3::before {
+  background: -webkit-radial-gradient(0% 0%, circle, transparent 0%, transparent 70%, skyblue 70%, skyblue 100%);
+  background: radial-gradient(0% 0%, circle, transparent 0%, transparent 70%, skyblue 70%, skyblue 100%);
+}
+#tab .demo .nav li.css3::after {
+  background: -webkit-radial-gradient(100% 0%, circle, transparent 0%, transparent 70%, skyblue 70%, skyblue 100%);
+  background: radial-gradient(100% 0%, circle, transparent 0%, transparent 70%, skyblue 70%, skyblue 100%);
+}
+#tab .demo .nav li.js {
+  background-color: pink;
+}
+#tab .demo .nav li.js::before {
+  background: -webkit-radial-gradient(0% 0%, circle, transparent 0%, transparent 70%, pink 70%, pink 100%);
+  background: radial-gradient(0% 0%, circle, transparent 0%, transparent 70%, pink 70%, pink 100%);
+}
+#tab .demo .nav li.js::after {
+  background: -webkit-radial-gradient(100% 0%, circle, transparent 0%, transparent 70%, pink 70%, pink 100%);
+  background: radial-gradient(100% 0%, circle, transparent 0%, transparent 70%, pink 70%, pink 100%);
+}
+#tab .demo .content {
+  height: 80px;
+  margin: 0 20px;
+}
+#tab .demo .content .page {
+  display: none;
+  padding: 5px;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#tab .demo .content .h5 {
+  background-color: orange;
+}
+#tab .demo .content .css3 {
+  background-color: skyblue;
+}
+#tab .demo .content .js {
+  background-color: pink;
+}
+#tab .demo .content .active {
+  display: block;
+}
