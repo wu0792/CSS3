@@ -1,0 +1,50 @@
+section {
+  background-color: lightsteelblue;
+  margin: 5px;
+  padding: 5px;
+}
+#map .img {
+  background: url('../image/flower.jpg') no-repeat center center;
+  position: relative;
+  width: 800px;
+  height: 669px;
+}
+#map .img .nav li {
+  list-style: none;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  cursor: pointer;
+}
+#map .img .nav li a {
+  text-decoration: none;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+}
+#map .img .nav li:hover {
+  border: solid 1px palevioletred;
+  background-color: rgba(200, 100, 200, 0.4);
+}
+#map .img .nav li:hover a {
+  display: block;
+}
+#map .img .nav li.no1 {
+  top: 80px;
+  left: 150px;
+  width: 160px;
+  height: 210px;
+}
+#map .img .nav li.no2 {
+  top: 80px;
+  left: 430px;
+  width: 200px;
+  height: 200px;
+}
+#map .img .nav li.no3 {
+  left: 510px;
+  top: 430px;
+  height: 100px;
+}

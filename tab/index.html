@@ -3,48 +3,90 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>背景相关CSS的一些经验</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+        window.onload =
+         function(){             
+            window.document.querySelectorAll('.nav li').forEach(
+                function(li){
+                    var self = this;
+                    if(li.addEventListener){
+                        li.addEventListener('click', function(ev){
+                            self.toggleActive(ev);
+                        });
+                    }else if(li.attachEvent){
+                        li.attachEvent('onClick',function(ev){
+                            self.toggleActive(ev);
+                        }); 
+                    }
+                });
+        };
+
+        function toggleActive(ev){
+            var self = this;
+            window.document.querySelectorAll('.nav li').forEach(
+                function(li){
+                    li.classList.remove('active');
+                }
+            );
+
+            var index = self.getElIndex(ev.target);
+            if(index >= 0){
+                ev.target.classList.add('active');
+                window.document.querySelectorAll('.content>div').forEach(function(div){
+                    div.classList.remove('active');
+                });
+                window.document.querySelector('.content div:nth-child('+ (index + 1)+')').classList.add('active');
+            }
+        }
+
+        function getElIndex(el){
+            var index = -1;
+            var hasFound = false;
+            if(el.parentElement){
+                while(!hasFound || el.parentElement.children.length < index){
+                    if(el.parentElement.children[++index] === el){
+                        hasFound = true;
+                    }
+                }
+            }
+
+            return hasFound ? index : -1;
+        }
+    </script>
 </head>
 
 <body>
-    <div class="circle" style="
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 0 0 50% 0;
-    position: relative;
-    left: 58px;
-"></div>
-
-    <div class="rect" style="
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-color: blueviolet;
-"></div>
-    <div class="rect" style="
-    display: inline-block;
-    width: 100px;
-    height: 50px;
-    background-color: blueviolet;
-    border-radius: 10px 10px 0 0;
-"></div>
-    <div class="rect" style="
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-color: blueviolet;
-"></div>
-    <div class="circle" style="
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 0 0 0 50%;
-    position: relative;
-    left: -58px;
-"></div>
+    <h1>背景相关CSS的一些经验</h1>
+    <section id="repeatX">
+        <h3>渐变背景</h3>
+        <hr>
+        <p>很简单的一个DEMO，容器元素使用X方向重叠的1px*100px图片，背景颜色使用背景图渐变结束的颜色，看不出分界线。</p>
+        <div>下面是DEMO：</div>
+        <hr>
+        <div class="demo">
+            这是里各种文字各种内容 <br> 这是里各种文字各种内容 <br> 这是里各种文字各种内容 <br> 这是里各种文字各种内容 <br> 这是里各种文字各种内容 <br>
+        </div>
+    </section>
+    <section id="tab">
+        <h3>圆角TAB效果</h3>
+        <hr>
+        <p>圆角的TAB，使用纯CSS实现，亮点是通过径向渐变实现书签两侧的内圆角边框</p>
+        <hr>
+        <div class="demo">
+            <ul class="nav">
+                <li class="h5">HTML5</li>
+                <li class="css3 active">CSS3</li>
+                <li class="js">JavaScript</li>
+            </ul>
+            <div class="content">                
+                <div class="page h5">HTML5</div>
+                <div class="page css3 active">CSS3功能强大，虽然入门容易，但真正掌握也需要大量练习。</div>
+                <div class="page js">JavaScript</div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
