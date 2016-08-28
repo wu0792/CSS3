@@ -1,0 +1,63 @@
+section{
+    background-color: lightsteelblue;
+    margin: 5px;
+    padding: 5px;
+}
+
+#map{
+    .img{
+        background: url('../image/flower.jpg') no-repeat center center;
+        position: relative;
+        width: 800px;
+        height: 669px;
+        .nav{
+            float: right;
+            padding: 0;
+            margin: 10px;
+        }
+        .nav li{
+            list-style: none;
+            cursor: pointer;
+            a {
+                text-decoration: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: black;
+                .tip{
+                    display: none;
+                }
+            }
+            &:hover{
+                border: solid 1px palevioletred;
+                background-color: rgba(200, 100, 200, 0.4);
+                a{
+                    border: solid 1px palevioletred;
+                    background-color: rgba(200, 100, 200, 0.4);
+                }
+                .tip{
+                    display: block;
+                }
+            }
+            &.no1 a{
+                top: 80px;
+                left: 150px;
+                width: 160px;
+                height: 210px;
+            }
+            &.no2 a{
+                top: 80px;
+                left: 430px;
+                width: 200px;
+                height: 200px;
+            }
+            &.no3 a{
+                left: 510px;
+                top: 430px;
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+    }
+}
